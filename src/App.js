@@ -1,6 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 import { validateEmail } from "./utils";
+import JumpingBalls from "./JumpingBalls";
+import { FaHome, FaEnvelope } from 'react-icons/fa';
 
 
 const PasswordErrorMessage = () => { 
@@ -128,7 +130,10 @@ function App() {
          </button>
         </fieldset>
       </form>
-      <div className="DecoBox"></div>
+      <div className="DecoBox">
+      <JumpingBalls />
+      <FaEnvelope className="form-icon" />
+      </div>
     </div>
   );
 }

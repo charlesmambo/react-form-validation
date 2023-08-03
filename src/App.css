@@ -4,6 +4,7 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
+  
 }
 
 h2 {
@@ -14,14 +15,15 @@ h2 {
 fieldset {
   display: flex;
   width: 480px;
-  padding: 32px;
-  border: 2px solid #ccc;
+  padding: 32px 40px;
+  border: 2px solid rgb(160, 204, 226);
   border-radius: 5px;
   flex-direction: column;
+  background-color: rgb(160, 204, 226);
 }
 
 label {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-size: 17px;
   font-weight: 600;
 }
@@ -38,14 +40,18 @@ sup {
 input,
 select {
   border-radius: 5px;
-  border: 2px solid #ccc;
+  border: 2px solid rgb(160, 204, 226);
+  /* background-color: rgb(174, 218, 240); */
+  background-color: #a0cce2;
   font-size: 15px;
-  padding: 14px 8px;
+  padding: 15px 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
 
 select, input::placeholder {
   font-size: 15px;
-  color: #555;
+  color: rgb(0, 0, 0);
 }
 
 .Field {
@@ -71,20 +77,64 @@ button {
   padding: 14px 8px;
   width: 240px;
   border-radius: 4px;
-  border: 1px solid #ccc;
-  background-color: darkblue;
+  border: 2px solid rgb(160, 204, 226);
+  /* background-color: rgb(45, 92, 116); */
+  background-color: rgb(160, 204, 226);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   color: white;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: bold;
+  letter-spacing: 2px;
   cursor: pointer;
+
+  &:hover {
+    background-image: linear-gradient(to right, rgb(160, 204, 226) , rgb(156, 211, 238));
+    color: rgb(45, 92, 116);
+  }
 }
 
 .DecoBox {
   display: flex;
-  width: 450px;
-  height: 62vh;
-  padding: 32px;
-  border: 2px solid #ccc;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 200px;
+  height: 30vh;
+  gap: 40px;
+  /* border: 2px solid #a52d2d; */
   border-radius: 5px;
 }
+
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25%, 75% {
+    transform: translateY(-50px);
+  }
+  50%, 100% {
+    transform: translateY(100px);
+  }
+}
+
+.ball {
+  width: 15px;
+  height: 15px;
+  background-color: #a0cce2;
+  border-radius: 50%;
+  position: absolute;
+  animation: jump 5s infinite; /* 50% of 5 seconds = 2.5 seconds rain effect */
+  animation-delay: calc(0.2s * var(--index)); /* Add delay based on ball index */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.form-icon {
+  position: relative;
+  top: 62px;
+  left: 8px;
+  font-size: 45px;
+  color: #a0cce2;
+}
+
+
