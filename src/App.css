@@ -6,6 +6,11 @@
   align-items: center;
 }
 
+h2 {
+  font-size: 30px;
+  text-align: center;
+}
+
 fieldset {
   display: flex;
   width: 480px;
@@ -17,7 +22,8 @@ fieldset {
 
 label {
   margin-bottom: 8px;
-  font-size: 18px;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 sup {
@@ -33,7 +39,7 @@ input,
 select {
   border-radius: 5px;
   border: 2px solid #ccc;
-  /* height: 32px; */
+  font-size: 15px;
   padding: 14px 8px;
 }
 
@@ -72,4 +78,13 @@ button {
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.DecoBox {
+  display: flex;
+  width: 450px;
+  height: 62vh;
+  padding: 32px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
 }
