@@ -1,7 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import { validateEmail } from "./utils";
 
 function App() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState({
+    value: "",
+    isTouched: false
+  });
+  const [role, setRole] = useState("role");
+
+
+
+
+
   return (
     <div className="App">
       <form>
@@ -10,28 +24,28 @@ function App() {
 
         <div className='Field'>
           <label>
-            First name
+            First name <sup>*</sup>
           </label>
           <input placeholder='First name'/>
         </div>
 
         <div className='Field'>
           <label>
-            Last name
+            Last name <sup>*</sup>
           </label>
           <input placeholder='Last name'/>
         </div>
 
         <div className='Field'>
           <label>
-           Email Address
+           Email Address <sup>*</sup>
           </label>
           <input placeholder='Email address'/>
         </div>
 
         <div className='Field'>
           <label>
-           Password
+           Password <sup>*</sup>
           </label>
           <input placeholder='Password'/>
         </div>
@@ -47,6 +61,9 @@ function App() {
         </select> 
         </div> 
 
+        <button type="submit"> 
+           Create account 
+         </button>
         </fieldset>
       </form>
     </div>
